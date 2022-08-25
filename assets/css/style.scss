@@ -1,0 +1,840 @@
+:root {
+  // ok
+  --primary: #722ed1;
+  --primary-dark: #391176;
+  --primary-darker: #160637;
+  --secondary: #f9f0ff;
+  --lightgreen: #b7eb8f;
+  --lightred: #ffadd2;
+  --lightblue: #e6f7ff;
+}
+$bgbutton: #c81059;
+$bgbutton2: #0099c8;
+
+@mixin section_h2 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  font-family: "CeraRoundProMedium";
+}
+@mixin fontOpenSans {
+  font-family: "Open Sans";
+}
+@font-face {
+  font-family: "CeraRoundProBold";
+  font-weight: 700;
+  src: url("fonts/TypeMates  Cera Round Pro Bold.otf");
+}
+@font-face {
+  font-family: "CeraRoundProThin";
+  font-weight: 700;
+  src: url("fonts/TypeMates  CeraRoundProThin.otf");
+}
+@font-face {
+  font-family: "CeraRoundProLight";
+  font-weight: 700;
+  src: url("fonts/TypeMates  CeraRoundProLight.otf");
+}
+@font-face {
+  font-family: "CeraRoundProRegular";
+  font-weight: 700;
+  src: url("fonts/TypeMates  CeraRoundProRegular.otf");
+}
+@font-face {
+  font-family: "CeraRoundProMedium";
+  font-weight: 700;
+  src: url("fonts/TypeMates  CeraRoundProMedium.otf");
+}
+body {
+  font-family: "Open Sans";
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.section-header h2 {
+  font-weight: 700;
+  color: var(--primary-darker);
+  margin: 38px 0 62px 0;
+  font-size: 36px;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 22px 0px 19px 0px;
+  background: white;
+}
+
+.header.header-scrolled {
+  background: #fff;
+  padding: 22px 0px 19px 0px;
+}
+
+.header .logo img {
+  margin-right: 6px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 14px;
+  color: #000000;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i {
+  color: #020202;
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.navbar a:hover,
+.navbar li:hover > a {
+  color: var(--primary);
+}
+.nav_custom1 {
+  padding: 10px 0 10px 37px;
+}
+.nav_custom2 {
+  padding: 10px 0 10px 40px;
+}
+.nav_custom3 {
+  padding: 10px 0 10px 45px;
+}
+.navbar .getstarted {
+  padding: 5px 31px;
+  border: 0.5px solid var(--primary);
+  margin-left: 41px;
+  border-radius: 50px;
+  color: var(--primary);
+}
+
+.navbar .getstarted:hover {
+  color: #fff;
+  background: var(--primary);
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #000000;
+  border-radius: 2px;
+
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: black;
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #f2f6f8;
+  transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #000000;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile li:hover > a {
+  color: var(--primary-dark);
+}
+
+.navbar-mobile .getstarted {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 23px;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+
+  transition: 0.3s;
+  border-radius: 40px;
+}
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.navbar .dropdown ul li {
+  min-width: 160px;
+}
+@media (max-width: 991px) {
+  .mobile-nav-toggle::before {
+    font-weight: 600 !important;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+  .header {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+}
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  display: flex;
+  width: 100%;
+  padding: 142px 0px 67px 0px;
+  background: #f2f6f8;
+}
+
+.hero h1 {
+  font-family: "CeraRoundProBold";
+  font-size: 30px;
+  font-weight: 700;
+  color: #2d2d2d;
+  line-height: 45px;
+  margin-bottom: 10px;
+}
+.heroul {
+  margin: 0;
+  padding-left: 17px;
+  list-style-type: none;
+}
+.heroul li {
+  color: #555555;
+
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.heroul li::marker {
+  font-size: 10px;
+}
+.heroul li::before {
+  content: "•";
+  font-size: 19px;
+  position: relative;
+  top: 2px;
+  right: 6px;
+}
+.hero .btn-get-started {
+  border: 1px solid $bgbutton;
+  margin-top: 30px;
+  line-height: 0;
+  padding: 11px 62px;
+
+  border-radius: 5px;
+  transition: 0.5s;
+  color: #fff;
+  background: $bgbutton;
+}
+
+.hero .btn-get-started span {
+  font-size: 14px;
+  font-family: "CeraRoundProRegular";
+  line-height: 21px;
+  font-weight: 500;
+}
+
+.hero .btn-get-started:hover {
+  background: white;
+  color: $bgbutton;
+  border: 1px solid $bgbutton;
+}
+.hero .btn-get-started:focus {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.hero .hero-img {
+  text-align: right;
+}
+
+.img_hero {
+  position: relative;
+  right: 14px;
+}
+@media (min-width: 1024px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 94px 0px 12px 0px;
+  }
+  .hero .justify-content-center {
+    order: 2;
+  }
+  .img_hero {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .hero h1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .heroul li {
+    font-size: 13px;
+    line-height: 26px;
+  }
+  .hero .btn-get-started span {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .hero .btn-get-started {
+    width: 100%;
+  }
+  .hero .container {
+    padding: 0px 15px;
+  }
+}
+
+/*--------------------------------------------------------------
+# tarif
+--------------------------------------------------------------*/
+.tarif {
+  margin-top: 52px;
+  padding-bottom: 55px;
+}
+.tarif h2 {
+  @include section_h2;
+}
+.tarif_name {
+  margin-bottom: 12.5px;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "CeraRoundProMedium";
+}
+.tarif_name2 {
+  margin-bottom: 5px;
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Open Sans";
+  color: #acacac;
+}
+.tarif_speed {
+  margin-bottom: 4.5px;
+  line-height: 37.5px;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: "CeraRoundProMedium";
+  color: #c81059;
+}
+.tarif_desc {
+  margin-bottom: 24px;
+  line-height: 19.5px;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: "Open Sans";
+  color: #555555;
+}
+.tarif_check {
+  display: inline-block;
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "CeraRoundProRegular";
+  color: #2d2d2d;
+}
+.tarif_price {
+  line-height: 60px;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "CeraRoundProBold";
+}
+.tarif_mounth {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Open Sans";
+  color: rgba(85, 85, 85, 0.5);
+}
+.tarif_dop {
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Open Sans";
+  color: rgba(85, 85, 85, 0.5);
+}
+.tarif_button {
+  padding: 10px 0;
+  background: #c81059;
+  border-radius: 5px;
+  width: 100%;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  margin-top: 19px;
+}
+.tarif_button:hover {
+  background: #0099c8;
+  transition: 0.3s;
+  color: #ffffff;
+}
+.item-card {
+  padding: 30px;
+}
+.tarif .owl-carousel {
+  margin-top: 33px;
+}
+.tarif .owl-carousel .owl-item {
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+  min-height: 481px;
+}
+.tarif .owl-carousel .active {
+  opacity: 1;
+  overflow: visible !important;
+  box-shadow: 0px 12px 25px rgba(90, 90, 90, 0.12);
+}
+
+.tarif .owl-carousel .owl-stage-outer {
+  overflow: visible;
+}
+
+/* checkbox*/
+.wpcf7-acceptance {
+  margin-bottom: 20px;
+}
+.wpcf7-acceptance input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 10px;
+  width: 20px;
+}
+.tarif .wpcf7-acceptance input[type="checkbox"] {
+  bottom: 19px;
+}
+.wpcf7-acceptance input[type="checkbox"]:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  margin-top: -2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 1px solid rgba(45, 45, 45, 0.1);
+  border-radius: 2px;
+}
+.wpcf7-acceptance input[type="checkbox"]:checked:before {
+  background: #0099c8;
+  border-color: #0099c8;
+}
+.wpcf7-acceptance input[type="checkbox"]:disabled {
+  color: #b8b8b8;
+  cursor: auto;
+}
+.wpcf7-acceptance input[type="checkbox"]:disabled:before {
+  box-shadow: none;
+  background: #ddd;
+}
+.wpcf7-acceptance input[type="checkbox"]:checked:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+    4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+/*end checkbox*/
+@media (max-width: 991px) {
+  .tarif {
+    margin-top: 35px;
+  }
+  .tarif .container {
+    padding: 0px 15px;
+  }
+  .tarif h2 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .tarif .owl-carousel {
+    margin-top: 19px;
+  }
+  .item-card {
+    padding: 20px;
+  }
+  .tarif_name {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+  .tarif_name2 {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .tarif_speed {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 10px;
+  }
+  .tarif_desc {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
+  .tarif_check {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .wpcf7-acceptance {
+    margin-bottom: 10px;
+  }
+  .tarif_price {
+    font-size: 25px;
+    line-height: 37.5px;
+  }
+  .tarif_mounth {
+    font-size: 14px;
+    line-height: 21px;
+    color: #555555;
+  }
+  .tarif_dop {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .tarif_button {
+    margin-top: 10px;
+  }
+  .tarif .owl-carousel .owl-item {
+    min-height: 357px;
+  }
+}
+
+/*--------------------------------------------------------------
+# connect
+--------------------------------------------------------------*/
+.connect .container {
+  background: #f2f6f8;
+  border-radius: 20px;
+  padding: 50px;
+  margin-bottom: 40px;
+}
+.connect h2 {
+  @include section_h2;
+}
+.connect_service a {
+  border-radius: 10px;
+  line-height: 18px;
+  margin-right: 5px;
+  padding: 7px 40px;
+  border: 1px solid rgba(45, 45, 45, 0.1);
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "CeraRoundProRegular";
+  color: #2d2d2d;
+}
+.connect_service a:hover {
+  color: $bgbutton2;
+  border: 1px solid #0099c8;
+  transition: 0.3s;
+}
+.connect_input_name {
+  margin-right: 30px;
+  color: rgba(45, 45, 45, 0.3);
+  @include fontOpenSans;
+  padding: 12px 17px 15px 25px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  border-radius: 2px;
+  border: none;
+}
+.connect_input_tel {
+  margin-right: 30px;
+  color: rgba(45, 45, 45, 0.3);
+  @include fontOpenSans;
+  width: 355px;
+  padding: 12px 17px 15px 25px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  border-radius: 2px;
+  border: none;
+}
+.connect_input_submit {
+  border: 1px solid #c81059;
+
+  padding: 11px 64px;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #fff;
+  background: #c81059;
+  font-size: 14px;
+  font-family: "CeraRoundProRegular";
+  line-height: 21px;
+  font-weight: 500;
+}
+.connect_input_submit:hover {
+  background: white;
+  color: #c81059;
+  border: 1px solid #c81059;
+}
+.connect_input_submit:focus {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+.connect form {
+  margin-top: 20px;
+}
+.connect .wpcf7-acceptance {
+  color: #989898;
+  font-family: "CeraRoundProRegular";
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.connect .wpcf7-acceptance a {
+  color: #989898;
+  font-family: "CeraRoundProRegular";
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.connect .wpcf7-acceptance a:hover {
+  text-decoration: none;
+}
+.connect .wpcf7-acceptance input[type="checkbox"] {
+  margin-right: 20px;
+}
+@media screen and (max-width: 991px) {
+  .connect_input_tel {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .connect_input_name {
+    width: 100%;
+  }
+  .connect h2 {
+    line-height: 27px;
+    font-size: 18px;
+  }
+  .connect .container {
+    margin-bottom: 19px;
+    padding: 20px 10px;
+  }
+  .connect_service a {
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 6.5px 10px;
+    font-size: 11px;
+  }
+  .connect_input_submit {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .connect .wpcf7-acceptance a {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .connect .wpcf7-acceptance input[type="checkbox"] {
+    margin-right: 0px;
+  }
+  .connect .wpcf7-acceptance {
+    margin-top: 6px;
+    margin-bottom: 0px;
+  }
+  .connect_service {
+    margin-top: 10px;
+  }
+  .connect form {
+    margin-top: 10px;
+  }
+}
+/*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
+footer {
+  margin-bottom: 21px;
+}
+.footer-container {
+  border-top: 1px solid #2d2d2d1a;
+  border-bottom: 1px solid #2d2d2d1a;
+  padding: 20px 0;
+}
+.footer_col_left p {
+  margin-left: 60px;
+  font-size: 14px;
+  line-height: 21px;
+  display: inline-block;
+  color: #c2c2c2;
+  font-weight: 400;
+  font-family: "CeraRoundProRegular";
+}
+.footer_col_right {
+  text-align: right;
+}
+.footer_col_right img {
+  margin-left: 3px;
+}
+footer .row {
+  margin: 0;
+}
+@media screen and (max-width: 991px) {
+  .footer_col_left p {
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .footer-container {
+    border-bottom: 0px solid #2d2d2d1a;
+  }
+  footer {
+    margin-bottom: 0px;
+  }
+  .footer_col_right img {
+    margin-left: 0px;
+  }
+}
